@@ -20,12 +20,13 @@ public class Dev {
         if (conteudo.isPresent()) {
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
+            System.out.println("Progredindo...");
         } else {
             System.err.println("Você não está matriculado em nenhum conteúdo!");
         }
     }
 
-    public double calcularXp() {
+    public double calcularTotalXp() {
         return this.conteudosConcluidos.stream().
                 mapToDouble(conteudo -> conteudo.calulcarXp()).sum();
     }
